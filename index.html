@@ -17,20 +17,21 @@
     
     body {
       background-color: #F1EAE0; 
-      color: #555555; /* Grayish text */
+      color: #555555;
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
+      width: 100%;
     }
     
     section {
       min-height: 100vh;
-      width: 100vw;
+      width: 100%;
     }
     
     .header {
       position: relative;
       height: 100vh;
-      width: 100vw;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -49,7 +50,7 @@
     }
     
     .title-top {
-      font-family: 'Ububtu', sans-serif;
+      font-family: 'Ubuntu', sans-serif;
       font-size: 13vw;
       font-weight: 900;
       line-height: 0.8;
@@ -85,10 +86,9 @@
       cursor: pointer;
       transition: all 0.3s ease;
       z-index: 2;
-      animation: bobbing 4s ease-in-out infinite; /* Changed from 2s to 4s */
+      animation: bobbing 4s ease-in-out infinite;
     }
 
-    /* Create the bobbing animation keyframes */
     @keyframes bobbing {
       0%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -98,9 +98,8 @@
       }
     }
 
-    /* Remove the hover transform since it would conflict with the animation */
     .scroll-indicator:hover {
-      opacity: 0.8; /* Changed to opacity for hover effect instead */
+      opacity: 0.8;
     }
 
     .scroll-indicator span {
@@ -118,7 +117,7 @@
     }
     
     .about-section {
-      padding: 4rem 2rem;
+      padding: 4rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -126,31 +125,32 @@
     
     .section-title {
       font-family: 'Ubuntu', sans-serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #444444;
       margin-bottom: 2rem;
       text-align: center;
     }
     
     .about-content {
+      width: 100%;
       max-width: 800px;
       margin: 0 auto;
       background-color: rgba(255, 255, 255, 0.7);
-      padding: 2rem;
+      padding: 1.5rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .about-text {
       margin-bottom: 2rem;
-      line-height: 1.8;
+      line-height: 1.6;
       color: #555555;
     }
     
     .business-info {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
     
     .info-card {
@@ -187,14 +187,15 @@
 
     .project-cards {
       display: flex;
-      width: 300vw; /* 3 projects * 100vw */
+      width: 300vw;
       transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .project-card {
       width: 100vw;
-      height: 100vh;
-      padding: 2rem;
+      height: auto;
+      min-height: 100vh;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -203,33 +204,34 @@
 
     .project-number {
       position: absolute;
-      top: 2rem;
-      left: 2rem;
-      font-size: 1.5rem;
+      top: 1rem;
+      left: 1rem;
+      font-size: 1.25rem;
       font-weight: bold;
       color: #444444;
     }
 
     .project-content {
+      width: 100%;
       max-width: 800px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 1.5rem;
       background-color: #F7F6F2;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
     }
 
-    /* For projects with images */
     .project-content-with-image {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
       align-items: center;
     }
 
     .project-image {
       width: 100%;
+      max-width: 350px;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -241,11 +243,12 @@
     .project-text {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
 
     .project-title {
       font-family: 'Ubuntu', sans-serif;
-      font-size: 3rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: #333333;
       border-bottom: 4px solid #555555;
@@ -253,15 +256,16 @@
     }
 
     .project-description {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
       color: #555555;
     }
 
     .project-meta {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.5rem;
       color: #777777;
       border-top: 1px solid #cccccc;
       padding-top: 1rem;
@@ -270,23 +274,23 @@
     
     .navigation {
       position: fixed;
-      right: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 100;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 1rem;
-      background-color: rgba(255, 255, 255, 0.517);
-      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 0.75rem;
       border-radius: 50px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
     .nav-btn {
       font-family: Poppins;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
       background-color: #E0DCD1;
       border: none;
@@ -296,7 +300,7 @@
       justify-content: center;
       font-weight: bold;
       color: #555555;
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
     }
     
@@ -307,8 +311,8 @@
     
     .corner-navigation {
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
+      bottom: 1rem;
+      right: 1rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -336,7 +340,7 @@
     }
     
     .footer {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
       background-color: #E0DCD1;
       color: #666666;
@@ -346,64 +350,96 @@
       margin-bottom: 1rem;
     }
 
+    .footer-contact {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .footer-contact h4 {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-contact img {
+      height: 14px;
+      margin-right: 8px;
+    }
+
     /* FORUM EXAMPLE SECTION */
     .forum-header {
       font-family: "Courier New", Courier, monospace;
       background-color: #2a4b8d;
       color: white;
-      padding: 15px;
+      padding: 12px;
       border-radius: 8px 8px 0 0;
       margin-bottom: 1px;
     }
     
     .forum-title {
       font-family: "Courier New", Courier, monospace;
-      font-size: 24px;
+      font-size: 1.2rem;
       margin: 0;
     }
     
     .forum-subtitle {
       font-family: "Courier New", Courier, monospace;
-      font-size: 14px;
+      font-size: 0.85rem;
       margin: 5px 0 0;
       font-style: italic;
     }
     
     .forum-navbar {
       background-color: #d1d1e0;
-      padding: 10px 15px;
-      margin-bottom: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
       border-radius: 0 0 8px 8px;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     
     .nav-links a {
       font-family: "Courier New", Courier, monospace;
-      margin-right: 15px;
+      margin-right: 12px;
       color: #2a4b8d;
       text-decoration: none;
       font-weight: bold;
-    }
-    
-    .forum-section {
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      overflow: hidden;
+      font-size: 0.9rem;
     }
 
-    .visit-amber-button {
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+    }
+
+    .visit-amber-button, .visit-forum-button {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #b46113;
-      color: #e0dcd1;
+      width: 100%;
+      max-width: 250px;
+      padding: 12px 20px;
+      text-align: center;
       text-decoration: none;
       border-radius: 8px;
       font-family: sans-serif;
-      font-size: 16px;
+      font-size: 1rem;
       transition: background-color 0.3s ease;
+    }
+
+    .visit-amber-button {
+      background-color: #b46113;
+      color: #e0dcd1;
     }
 
     .visit-amber-button:hover {
@@ -412,15 +448,8 @@
     }
 
     .visit-forum-button {
-      display: inline-block;
-      padding: 10px 20px;
       background-color: #2a4b8d;
       color: #E0DCD1;
-      text-decoration: none;
-      border-radius: 8px;
-      font-family: sans-serif;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
     }
 
     .visit-forum-button:hover {
@@ -428,32 +457,99 @@
       color: #555555;
     }
 
-
-    
-    @media (max-width: 768px) {
-      .title-top, .title-bottom {
-        font-size: 16vw;
-      }
-      
-      .project-title, .section-title {
-        font-size: 2rem;
-      }
-
+    /* Improved mobile media queries */
+    @media (min-width: 768px) {
       .project-content-with-image {
-        grid-template-columns: 1fr;
+        flex-direction: row;
       }
       
-      .nav-btn {
-        width: 3rem;
-        height: 3rem;
+      .project-text {
+        flex: 1;
+      }
+      
+      .project-meta {
+        flex-direction: row;
+        justify-content: space-between;
       }
       
       .business-info {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
       
       .navigation {
-        right: 1rem;
+        right: 2rem;
+        bottom: auto;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+      }
+      
+      .section-title, .project-title {
+        font-size: 3rem;
+      }
+      
+      .project-description {
+        font-size: 1.2rem;
+      }
+      
+      .forum-title {
+        font-size: 24px;
+      }
+      
+      .forum-subtitle {
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .title-top, .title-bottom {
+        font-size: 17vw;
+      }
+      
+      .project-card {
+        padding: 1rem 0.5rem;
+      }
+      
+      .project-content {
+        padding: 1rem;
+      }
+      
+      .nav-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .corner-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      
+      .forum-title {
+        font-size: 1rem;
+      }
+      
+      .forum-subtitle {
+        font-size: 0.75rem;
+      }
+      
+      .nav-links a {
+        font-size: 0.8rem;
+        margin-right: 8px;
+      }
+    }
+
+    /* Touch-friendly improvements */
+    @media (hover: none) {
+      .nav-btn, .corner-btn, .visit-amber-button, .visit-forum-button {
+        /* Increase tap target size */
+        padding: 0.25rem;
+      }
+      
+      /* Increase spacing for touch targets */
+      .project-card {
+        touch-action: pan-y;
       }
     }
   </style>
@@ -481,16 +577,17 @@
               <li>Feature Rich and Efficient</li>
               <li>Comprehensive Search Engine</li>
             </ul>
-            <div style="height: 30px;"></div>
-            <a href="https://www.amberbooks.co.za" target="_blank" class="visit-amber-button">About Amber</a>
-            <div style="height: 10px;"></div>
-            
+            <div class="button-container">
+              <a href="https://www.amberbooks.co.za" target="_blank" class="visit-amber-button">About Amber</a>
+            </div>
             <div class="project-meta">
               <div>Project Status: Active</div>
               <div>Last Updated: 8 April 2025</div>
             </div>
           </div>
-          <a target="_blank" href="https://www.amberbooks.co.za"><img src="assets/Amber.png" alt="Amber second-hand textbooks mockup phone images" class="project-image"></a>
+          <a target="_blank" href="https://www.amberbooks.co.za">
+            <img src="/assets/Amber.png" alt="Amber second-hand textbooks mockup phone images" class="project-image">
+          </a>
         </div>
       </div>
       
@@ -510,48 +607,33 @@
               <a>Contact</a>
             </div>
           </div>
-          <div style="height: 30px;">
-            <a style="width: 50%;" href="https://www.amberbooks.co.za" target="_blank" class="visit-forum-button">Visit the DevForum</a>
+          <div class="button-container">
+            <a href="https://www.amberbooks.co.za" target="_blank" class="visit-forum-button">Visit the DevForum</a>
           </div>
-          <div style="height: 20px;"></div>
           <div class="project-meta">
             <div>Project Status: Stay Tuned</div>
             <div>Last Updated: April 2025</div>
           </div>
         </div>
       </div>
-      
-      <!-- <div class="project-card" id="project-3">
-        <div class="project-number">03</div>
-        <div class="project-content">
-          <h2 class="project-title">16bit Computer</h2>
-          <p class="project-description">An educational hardware and software project demonstrating the principles of computer architecture through a fully functional 16-bit computer system implementation. A testament to our deep understanding of computing fundamentals.</p>
-          <div class="project-meta">
-            <div>Project Status: Completed</div>
-            <div>Last Updated: February 2025</div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
   
   <footer class="footer">
     <p>&copy; 2025 T1 Software Solutions PTY (LTD). All rights reserved.</p>
-    <div style="text-align: left;">
-      <h4>Contact Us</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li><img src="assets/mail-line.png" style="height: 14px;" alt=""><a href="mailto:toastie.de@gmail.com"></a> toastie.de@gmail.com</li>
-        <li><img src="assets/phone-line.png" style="height: 14px;" alt=""><a href="tel:+27795932931"></a> +(27) 79 593 2931</li>
-        <li><img src="assets/south-africa.png" style="height: 14px;" alt=""><a href="#"></a> South Africa, Stellenbosch</li>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><img src="/assets/mail-line.png" alt="Email icon"> toastie.de@gmail.com</li>
+        <li><img src="/assets/phone-line.png" alt="Phone icon"> +(27) 79 593 2931</li>
+        <li><img src="/assets/south-africa.png" alt="Location icon"> South Africa, Stellenbosch</li>
       </ul>
     </div>
-    
   </footer>
   
   <div class="navigation">
     <button class="nav-btn active" data-index="0">01</button>
     <button class="nav-btn" data-index="1">02</button>
-    <!-- <button class="nav-btn" data-index="2">03</button> -->
   </div>
   
   <div class="corner-navigation">
@@ -565,26 +647,21 @@
       const homeBtn = document.getElementById('homeBtn');
       const scrollToAbout = document.getElementById('scrollToAbout');
       const projectsSection = document.getElementById('projects');
-      const aboutSection = document.getElementById('about');
       let currentIndex = 0;
       
-      // Update active button
+      // Project navigation
       function updateActiveButton(index) {
         navBtns.forEach(btn => btn.classList.remove('active'));
         navBtns[index].classList.add('active');
       }
       
-      // Go to selected project and scroll to projects section
       function goToProject(index) {
         currentIndex = index;
         projectCards.style.transform = `translateX(-${index * 100}vw)`;
         updateActiveButton(index);
-        
-        // Scroll to the projects section
         projectsSection.scrollIntoView({ behavior: 'smooth' });
       }
       
-      // Project navigation buttons
       navBtns.forEach(btn => {
         btn.addEventListener('click', function() {
           const index = parseInt(this.getAttribute('data-index'));
@@ -600,25 +677,48 @@
         });
       });
       
-      // Scroll indicator button
+      // Scroll indicator
       scrollToAbout.addEventListener('click', function() {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
       });
       
       // Keyboard navigation
       document.addEventListener('keydown', function(e) {
-        if (e.key === "ArrowRight" && currentIndex < 2) {
+        if (e.key === "ArrowRight" && currentIndex < navBtns.length - 1) {
           goToProject(currentIndex + 1);
         } else if (e.key === "ArrowLeft" && currentIndex > 0) {
           goToProject(currentIndex - 1);
         }
       });
       
-      // Canvas setup for animated pattern
+      // Touch support for swiping between projects
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      projectCards.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, false);
+      
+      projectCards.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, false);
+      
+      function handleSwipe() {
+        const SWIPE_THRESHOLD = 50;
+        if (touchEndX < touchStartX - SWIPE_THRESHOLD && currentIndex < navBtns.length - 1) {
+          // Swipe left
+          goToProject(currentIndex + 1);
+        } else if (touchEndX > touchStartX + SWIPE_THRESHOLD && currentIndex > 0) {
+          // Swipe right
+          goToProject(currentIndex - 1);
+        }
+      }
+      
+      // Canvas background animation
       const canvas = document.getElementById('patternCanvas');
       const ctx = canvas.getContext('2d');
       
-      // Set canvas dimensions
       function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -627,32 +727,32 @@
       resizeCanvas();
       window.addEventListener('resize', resizeCanvas);
       
-      // Pattern parameters
+      // Optimize canvas animation for mobile
       const lineSegments = [];
-      const gridSize = 35; // Space between lines
+      const isMobile = window.innerWidth < 768;
+      const gridSize = isMobile ? 45 : 35; // Larger grid on mobile for better performance
       const rows = Math.ceil(window.innerHeight / gridSize) + 5;
       const cols = Math.ceil(window.innerWidth / gridSize) + 5;
-      const segmentLength = gridSize * 0.7; // Length of each segment
+      const segmentLength = gridSize * 0.7;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
       let time = 0;
-      const windSpeed = 0.01; // Speed of the wave motion
+      const windSpeed = isMobile ? 0.008 : 0.01; // Slightly slower animation on mobile
       
-      // Create grid of line segments
       function createGrid() {
-        lineSegments.length = 0; // Clear existing segments
+        lineSegments.length = 0;
         
-        for (let row = -5; row < rows; row++) {
-          for (let col = -5; col < cols; col++) {
+        // Reduce density on mobile
+        const skipFactor = isMobile ? 2 : 1;
+        
+        for (let row = -5; row < rows; row += skipFactor) {
+          for (let col = -5; col < cols; col += skipFactor) {
             const x = col * gridSize;
             const y = row * gridSize;
             
-            // Calculate distance from center for radial effect
             const dx = x - centerX;
             const dy = y - centerY;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            // Calculate angle for radial orientation
             const angle = Math.atan2(dy, dx);
             
             lineSegments.push({
@@ -668,30 +768,29 @@
       }
       
       createGrid();
-      window.addEventListener('resize', createGrid);
+      window.addEventListener('resize', function() {
+        resizeCanvas();
+        createGrid();
+      });
       
-      // Animation loop
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        time += 0.01;
+        time += isMobile ? 0.008 : 0.01; // Slower animation on mobile
         
         ctx.strokeStyle = '#97928b';
         ctx.lineWidth = 2;
         
         for (const segment of lineSegments) {
-          // Calculate displacement based on distance and time
-          const waveX = Math.sin(time + segment.distance * 0.01) * 10;
-          const waveY = Math.cos(time + segment.distance * 0.01) * 10;
+          // Use simpler math on mobile for better performance
+          const waveX = Math.sin(time + segment.distance * 0.01) * (isMobile ? 8 : 10);
+          const waveY = Math.cos(time + segment.distance * 0.01) * (isMobile ? 8 : 10);
           
-          // Apply more movement to segments closer to center
           const distanceFactor = Math.max(0.1, Math.min(1, segment.distance / 500));
           const x = segment.originalX + waveX * distanceFactor;
           const y = segment.originalY + waveY * distanceFactor;
           
-          // Calculate dynamic angle based on position and time
-          const dynamicAngle =  Math.sin(time * windSpeed + segment.distance * 0.003) * 0.5;
+          const dynamicAngle = Math.sin(time * windSpeed + segment.distance * 0.003) * 0.5;
           
-          // Draw line segment
           ctx.beginPath();
           ctx.moveTo(x, y);
           ctx.lineTo(
